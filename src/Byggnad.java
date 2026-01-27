@@ -1,3 +1,4 @@
+// Denna klass är en basklas som är abstrackt så man måste ärva från den
 public abstract class Byggnad { 
     protected int byggnadsId;
     protected int yta;  

@@ -1,14 +1,13 @@
-// Denna klass Gör en villa med rum, yta och toallet
-public class Villa extends Byggnad {
+// Denna klass Gör ett radhus som byggföretaget tilverkar
+public class RadHus extends Byggnad {
     private int rum;
     private int sovRum;
     private int badRum;
     private int kök;
     private int tomtYta;
 
-    public Villa(int byggnadsId, int yta, int pris, int rum, int sovRum, int badRum, int kök, int tomtYta) {
+    public RadHus(int byggnadsId, int yta, int pris, int rum, int sovRum, int badRum, int kök, int tomtYta) {
         super(byggnadsId, yta, pris);
-        
         // 4–7 rum
         if (rum < 4 || rum > 7) {
             throw new IllegalArgumentException("Antal rum måste vara mellan 4 och 7");
@@ -34,8 +33,8 @@ public class Villa extends Byggnad {
             throw new IllegalArgumentException("Tomtstorlek måste vara mellan 400 och 1000 kvm");
         }
 
-        // Pris 3500000 – 5000000 kr
-        if (pris < 3500000 || pris > 5000000) {
+        // Pris 2500000 – 4000000 kr
+        if (pris < 2500000 || pris > 4000000) {
             throw new IllegalArgumentException("Pris måste vara mellan 3 500 000 och 5 000 000 kr");
         }
 

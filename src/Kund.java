@@ -1,4 +1,5 @@
-public class Kund {  // Customer
+// Denna klass sparar info om kunden som vill bestäla
+public class Kund { 
     private int kundId;
     private String namn;
     private String telefon;
