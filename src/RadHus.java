@@ -1,4 +1,4 @@
-// Denna klass Gör ett radhus som byggföretaget tilverkar
+// Denna klass Gör en RadHus med rum, yta och toallet
 public class RadHus extends Byggnad {
     private int rum;
     private int sovRum;
@@ -8,6 +8,7 @@ public class RadHus extends Byggnad {
 
     public RadHus(int byggnadsId, int yta, int pris, int rum, int sovRum, int badRum, int kök, int tomtYta) {
         super(byggnadsId, yta, pris);
+        
         // 4–7 rum
         if (rum < 4 || rum > 7) {
             throw new IllegalArgumentException("Antal rum måste vara mellan 4 och 7");

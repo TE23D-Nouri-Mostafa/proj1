@@ -1,10 +1,10 @@
 // Denna klass jör ett garage med bil-area
-public class RadHus extends Byggnad {
+public class Garage extends Byggnad {
     private int förrådsArea;
     private int bilArea;
 
 
-    public RadHus(int byggnadsId, int yta, int pris, int förrådsArea, int bilArea) {
+    public Garage(int byggnadsId, int yta, int pris, int förrådsArea, int bilArea) {
         super(byggnadsId, yta, pris);
         
         // Area 15 – 30 kvm
