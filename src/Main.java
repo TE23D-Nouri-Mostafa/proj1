@@ -115,7 +115,15 @@ public class Main {
         int byggnadsId = scanner.nextInt();
 
         
-        boolean borttagen = beställningar.removeIf(b -> b.getByggnad().byggnadsId == byggnadsId);
+boolean borttagen = false;
+
+for (int i = 0; i < beställningar.size(); i++) {
+    if (beställningar.get(i).getByggnad().byggnadsId == byggnadsId) {
+        beställningar.remove(i);
+        borttagen = true;
+        break;
+    }
+}
         
         if (borttagen) {
             System.out.println("Beställning borttagen.");
