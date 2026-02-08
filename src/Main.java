@@ -1,20 +1,18 @@
+// meny man kan lägga till byggbeställningar, se alla beställningar, ta bort dem och se hur mycket pengar alla beställningar tillsammans ger.
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    // Listan och scannern måste ligga här för att alla metoder ska kunna nå dem
     private static List<Beställning> beställningar = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
-    // Programstart
     public static void main(String[] args) {
         Main program = new Main();
         program.visaMeny();
     }
 
-    // Lägg till en ny beställning
     void läggTillBeställning() {
         System.out.println("Välj byggnadstyp: 1. Villa, 2. Radhus, 3. Garage, 4. Lägenhetshus");
         int val = scanner.nextInt();
@@ -28,7 +26,7 @@ public class Main {
         System.out.println("Ange pris:");
         int pris = scanner.nextInt();
 
-        if (val == 1) { // Alternativ för Villa
+        if (val == 1) {
             System.out.println("Ange antal rum (4-7):");
             int rum = scanner.nextInt();
             System.out.println("Ange antal sovrum (1-3):");
@@ -41,7 +39,7 @@ public class Main {
             Villa villa = new Villa(byggnadsId, yta, pris, rum, sovRum, badRum, 1, tomtYta);
             skapaBeställning(villa);
 
-        } else if (val == 2) { // Alternativ för Radhus
+        } else if (val == 2) { 
             System.out.println("Ange antal rum (4-7):");
             int rum = scanner.nextInt();
             System.out.println("Ange antal sovrum (1-3):");
@@ -54,7 +52,7 @@ public class Main {
             RadHus radhus = new RadHus(byggnadsId, yta, pris, rum, sovRum, badRum, 1, tomtYta);
             skapaBeställning(radhus);
 
-        } else if (val == 3) { // Alternativ för Garage
+        } else if (val == 3) {
             System.out.println("Ange föxsrrådsarea (5-20 kvm):");
             int förrådsArea = scanner.nextInt();
             System.out.println("Ange bilarea (15-30 kvm):");
@@ -63,7 +61,7 @@ public class Main {
             Garage garage = new Garage(byggnadsId, yta, pris, förrådsArea, bilArea);
             skapaBeställning(garage);
 
-        } else if (val == 4) { // Alternativ för Lägenhetshus
+        } else if (val == 4) { 
             System.out.println("Ange antal lägenheter (10-20):");
             int antalLagenheter = scanner.nextInt();
             System.out.println("Har trapphus? (true/false):");
@@ -76,11 +74,11 @@ public class Main {
         }
     }
 
-    // Skapar själva beställningen och kopplar den till en kund
+    
     void skapaBeställning(Byggnad byggnad) {
         System.out.println("Ange kund ID:");
         int kundId = scanner.nextInt();
-        scanner.nextLine(); // Rensar bufferten så att nästa textinmatning fungerar
+        scanner.nextLine();
 
         System.out.println("Ange namn:");
         String namn = scanner.nextLine();
@@ -96,7 +94,7 @@ public class Main {
         System.out.println("Beställning för " + byggnad.getClass().getSimpleName() + " lagd.");
     }
 
-    // Visar en lista på alla gjorda beställningar
+    
     void listaBeställningar() {
         if (beställningar.isEmpty()) {
             System.out.println("Inga beställningar finns.");
@@ -111,12 +109,12 @@ public class Main {
         }
     }
 
-    // Tar bort en beställning baserat på byggnadens ID
+    
     void taBortBeställning() {
         System.out.println("Ange byggnads ID för att ta bort:");
         int byggnadsId = scanner.nextInt();
 
-        // Letar upp och tar bort beställningen
+        
         boolean borttagen = beställningar.removeIf(b -> b.getByggnad().byggnadsId == byggnadsId);
         
         if (borttagen) {
@@ -126,7 +124,7 @@ public class Main {
         }
     }
 
-    // Räknar ut och visar den totala vinsten från alla beställningar
+    
     void visaVinst() {
         int total = 0;
         for (Beställning b : beställningar) {
@@ -135,7 +133,7 @@ public class Main {
         System.out.println("Total vinst: " + total + " kr");
     }
 
-    // Huvudmenyn för programmet
+    
     void visaMeny() {
         while (true) {
             System.out.println("\n--- MENY ---");
@@ -145,7 +143,7 @@ public class Main {
             System.out.println("4. Visa total vinst");
             System.out.println("5. Avsluta");
 
-            // Kontrollera att användaren matar in en siffra
+            
             if (!scanner.hasNextInt()) {
                 System.out.println("Var god mata in en siffra.");
                 scanner.next(); 
