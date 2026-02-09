@@ -1,3 +1,4 @@
+// Mostafa Nouri
 // Denna klass Gör en RadHus med rum, yta och toallet
 public class RadHus extends Byggnad {
     private int rum;

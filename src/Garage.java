@@ -1,3 +1,4 @@
+// Mostafa Nouri
 // Denna klass jör ett garage med bil-area
 public class Garage extends Byggnad {
     private int förrådsArea;

@@ -1,3 +1,4 @@
+// Mostafa Nouri
 // Denna klass Gör ett lägenhetshus med traphus och många lägenheter 
 public class Lagenhetshus extends Byggnad {
     private int antalLagenheter; 

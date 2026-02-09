@@ -1,3 +1,4 @@
+// Mostafa Nouri
 // Denna klass sparar info om kunden som vill bestäla
 public class Kund { 
     private int kundId;
